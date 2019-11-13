@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
 import Movie from './Movies/Movie';
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import { BrowserRouter as Router} from 'react-router-dom'
 
 
