@@ -8,7 +8,7 @@ const MovieCard = props => {
 
 <div className="movie-card">
 
-      <h2>{title}</h2>
+      <h2> Title: {title}</h2>
       <div className="movie-director">
         Director: <em>{director}</em>
       </div>
