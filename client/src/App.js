@@ -1,28 +1,35 @@
 import React, { useState } from 'react';
-
+import { Route, Switch, Link } from 'react-router-dom';
 import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
 import Movie from './Movies/Movie';
-import { Route, Link } from 'react-router-dom';
-import { BrowserRouter as Router} from 'react-router-dom'
 
 
 const App = () => {
-  const [savedList, setSavedList] = useState( [] );
+  const [savedList, setSavedList] = useState([]);
 
   const addToSavedList = movie => {
     setSavedList( [...savedList, movie] );
   };
 
   return (
-    <Router>
    
     <div>
       <SavedList list={savedList} />
-      <Route exact path='/' component={MovieList} />
-      <Route exact path='/movies/:id' render={(props) => (<Movie {...props}/>)} />
+
+      
+      <Switch>
+      <Route exact path="/">
+      <MovieList/>
+      </Route>
+       <Route path="/movies/:id">
+      <Movie />
+      </Route>
+      </Switch>
+      
+    
     </div>
-    </Router>
+    
   
   );
 };
@@ -30,15 +37,14 @@ const App = () => {
 export default App;
 
 
+
+
 //PROPS
 
 //write name of prop in App, and then give value 
 //e.g <Component nameofprop={value}/> so we can use value inside it
 //then to access you write: props.value in the component you want it
-//e.g const component = (props) => {
-//    console.log(props.value)
-//  return(<h1></h1>)
-//}
+
 
 //PASSING to another component
 
